@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sweet Beauty Spa • Luxury Beauty & Wellness Sanctuary</title>
+  <meta name="description" content="Experience timeless beauty and deep relaxation at Sweet Beauty Spa. Indulge in signature facials, massages, and nurturing rituals in an elegant sanctuary of care.">
+  <meta property="og:title" content="Sweet Beauty Spa • Luxury Beauty & Wellness">
+  <meta property="og:description" content="Where sweetness meets serenity. Premium facials, massages and beauty rituals in a tranquil, elegant setting.">
+  <meta property="og:image" content="assets/hero.jpg">
+  <meta property="og:type" content="website">
+
+  <!-- Elegant fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <style>
+    :root {
+      --cream: #FDF9F4;
+      --blush: #F4E6E7;
+      --rose: #C48A7D;
+      --deep: #3F2A2A;
+      --sage: #9CA88F;
+      --gold: #D4B48C;
+    }
+    
+    .font-display {
+      font-family: 'Playfair Display', Georgia, serif;
+    }
+    
+    .font-body {
+      font-family: 'Inter', system_ui, -apple-system, sans-serif;
+    }
+
+    .section-header {
+      font-size: 2.75rem;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+
+    @media (min-width: 768px) {
+      .section-header {
+        font-size: 3.5rem;
+      }
+    }
+
+    .spa-card {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .spa-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.15);
+    }
+
+    .nav-link {
+      position: relative;
+      transition: color 0.2s ease;
+    }
+    
+    .nav-link:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 1px;
+      bottom: -2px;
+      left: 0;
+      background-color: #C48A7D;
+      transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover:after {
+      width: 100%;
+    }
+
+    .luxury-btn {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .luxury-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 15px -3px rgb(196 138 125 / 0.25);
+    }
+
+    .service-icon {
+      transition: transform 0.3s ease;
+    }
+    
+    .spa-card:hover .service-icon {
+      transform: scale(1.1) rotate(3deg);
+    }
+
+    .gallery-img {
+      transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1), 
+                  box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .gallery-img:hover {
+      transform: scale(1.015);
+      box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    }
+
+    .testimonial-card {
+      transition: all 0.3s ease;
+    }
+
+    .nav-scrolled {
+      background-color: rgba(253, 249, 244, 0.96);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.04);
+    }
+
+    .soft-divider {
+      background: linear-gradient(to right, transparent, #E8C4C7, transparent);
+    }
+
+    .elegant-shadow {
+      box-shadow: 0 10px 15px -3px rgb(63 42 42 / 0.08), 
+                  0 4px 6px -4px rgb(63 42 42 / 0.08);
+    }
+
+    .modal {
+      animation: fadeInModal 0.2s ease forwards;
+    }
+
+    @keyframes fadeInModal {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .spa-bg {
+      background-color: #FDF9F4;
+    }
+
+    .rose-text {
+      color: #C48A7D;
+    }
+
+    .deep-text {
+      color: #3F2A2A;
+    }
+
+    .cream-text {
+      color: #FDF9F4;
+    }
+
+    .masonry-grid {
+      column-count: 1;
+      column-gap: 1rem;
+    }
+    
+    @media (min-width: 640px) {
+      .masonry-grid { column-count: 2; }
+    }
+    
+    @media (min-width: 1024px) {
+      .masonry-grid { column-count: 3; }
+    }
+
+    .masonry-item {
+      break-inside: avoid;
+      margin-bottom: 1rem;
+    }
+
+    .nav-active {
+      color: #C48A7D;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body class="font-body bg-[#FDF9F4] text-[#3F2A2A] overflow-x-hidden">
+  <!-- Top announcement bar -->
+  <div class="bg-[#F4E6E7] py-2 text-center text-xs tracking-[1px] font-medium text-[#3F2A2A]/70">
+    NOW WELCOMING GUESTS • PRIVATE COUPLES SUITES AVAILABLE
+  </div>
+
+  <!-- Navigation -->
+  <nav id="nav" class="fixed top-0 left-0 right-0 z-50 bg-[#FDF9F4]/90 backdrop-blur-lg transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex items-center justify-between h-20">
+        <!-- Logo -->
+        <div class="flex items-center gap-x-3">
+          <div class="w-9 h-9 rounded-full bg-gradient-to-br from-[#C48A7D] to-[#9CA88F] flex items-center justify-center">
+            <span class="text-white text-xl font-display tracking-tight">S</span>
+          </div>
+          <div>
+            <div class="font-display text-2xl tracking-[-1.5px] leading-none">Sweet Beauty</div>
+            <div class="text-[10px] text-[#C48A7D] tracking-[2px] -mt-0.5 font-medium">SPA</div>
+          </div>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex items-center gap-x-10 text-sm font-medium">
+          <a href="#story" class="nav-link text-[#3F2A2A]/80 hover:text-[#3F2A2A]">Our Story</a>
+          <a href="#treatments" class="nav-link text-[#3F2A2A]/80 hover:text-[#3F2A2A]">Treatments</a>
+          <a href="#experience" class="nav-link text-[#3F2A2A]/80 hover:text-[#3F2A2A]">The Experience</a>
+          <a href="#gallery" class="nav-link text-[#3F2A2A]/80 hover:text-[#3F2A2A]">Gallery</a>
+          <a href="#visit" class="nav-link text-[#3F2A2A]/80 hover:text-[#3F2A2A]">Visit Us</a>
+        </div>
+
+        <!-- Desktop CTA -->
+        <div class="hidden md:flex items-center gap-x-3">
+          <a href="https://www.facebook.com/sweetspahn/" target="_blank" 
+             class="px-5 py-2.5 text-sm font-medium border border-[#C48A7D]/60 hover:bg-[#C48A7D] hover:text-white hover:border-[#C48A7D] rounded-full transition-all">
+            Follow on Facebook
+          </a>
+          <button onclick="openBookingModal()"
+                  class="luxury-btn px-6 py-2.5 bg-[#C48A7D] hover:bg-[#A86F63] text-white text-sm font-medium rounded-full shadow-sm">
+            Book Your Ritual
+          </button>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden w-10 h-10 flex items-center justify-center text-[#3F2A2A]">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t bg-[#FDF9F4]">
+      <div class="px-6 py-6 flex flex-col gap-y-4 text-sm font-medium">
+        <a href="#story" class="py-1 mobile-nav-link">Our Story</a>
+        <a href="#treatments" class="py-1 mobile-nav-link">Treatments</a>
+        <a href="#experience" class="py-1 mobile-nav-link">The Experience</a>
+        <a href="#gallery" class="py-1 mobile-nav-link">Gallery</a>
+        <a href="#visit" class="py-1 mobile-nav-link">Visit Us</a>
+        
+        <div class="pt-3 border-t flex flex-col gap-3">
+          <a href="https://www.facebook.com/sweetspahn/" target="_blank" 
+             class="text-center py-3 border border-[#C48A7D]/60 rounded-full text-sm">Follow on Facebook</a>
+          <button onclick="openBookingModal(); closeMobileMenu();" 
+                  class="luxury-btn w-full py-3 bg-[#C48A7D] text-white rounded-full text-sm font-medium">
+            Book Your Ritual
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="relative pt-20 min-h-[100dvh] flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img src="assets/hero.jpg" alt="Serene woman receiving a luxurious facial treatment at Sweet Beauty Spa" 
+           class="w-full h-full object-cover object-center">
+      <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/35 to-black/50"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/10"></div>
+    </div>
+
+    <div class="relative z-10 max-w-5xl mx-auto px-6 text-center pt-8">
+      <div class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-white/90 backdrop-blur text-xs tracking-[2px] font-medium text-[#3F2A2A] mb-6">
+        EST. IN THE HEART OF TRANQUILITY
+      </div>
+      
+      <h1 class="font-display text-6xl md:text-7xl lg:text-[5.5rem] leading-[0.96] tracking-[-2.5px] text-white mb-6">
+        Sweet Beauty<br>Spa
+      </h1>
+      
+      <p class="max-w-md mx-auto text-xl md:text-2xl text-white/90 tracking-[-0.2px] font-light mb-10">
+        Where every ritual feels like coming home to yourself.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <button onclick="openBookingModal()" 
+                class="luxury-btn w-full sm:w-auto px-10 py-4 bg-white hover:bg-[#FDF9F4] active:bg-white text-[#3F2A2A] text-base font-semibold rounded-full shadow-xl flex items-center justify-center gap-2">
+          <span>Reserve Your Escape</span>
+        </button>
+        
+        <a href="#treatments" 
+           class="w-full sm:w-auto px-8 py-4 border border-white/70 hover:bg-white/10 text-white text-base font-medium rounded-full transition-all flex items-center justify-center gap-2">
+          Explore Treatments
+        </a>
+      </div>
+
+      <div class="mt-16 flex justify-center">
+        <a href="#story" class="flex flex-col items-center text-white/70 hover:text-white text-xs tracking-[1.5px] transition">
+          DISCOVER OUR SANCTUARY
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mt-1.5 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Trust Bar -->
+  <div class="border-b border-[#E8C4C7]/40 bg-white/60 py-5">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex flex-wrap justify-center items-center gap-x-10 gap-y-3 text-sm text-[#3F2A2A]/70">
+        <div class="flex items-center gap-2">
+          <span class="text-[#C48A7D]">★</span> 
+          <span class="font-medium">4.98/5</span> on Facebook
+        </div>
+        <div class="hidden sm:block w-px h-3.5 bg-[#E8C4C7]"></div>
+        <div>Over 3,200 beautiful transformations</div>
+        <div class="hidden sm:block w-px h-3.5 bg-[#E8C4C7]"></div>
+        <div>Featured sanctuary for brides &amp; wellness retreats</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Our Story -->
+  <section id="story" class="max-w-7xl mx-auto px-6 pt-20 pb-16">
+    <div class="grid md:grid-cols-2 gap-x-16 gap-y-10 items-center">
+      <div>
+        <div class="uppercase tracking-[3px] text-xs font-semibold text-[#C48A7D] mb-3">OUR PHILOSOPHY</div>
+        <h2 class="font-display section-header tracking-[-1.8px] leading-[1.02] mb-8">
+          Beauty, <span class="italic text-[#C48A7D]">gently</span> offered.
+        </h2>
+        
+        <div class="space-y-6 text-[15px] leading-relaxed text-[#3F2A2A]/90 max-w-[42ch]">
+          <p>Sweet Beauty Spa was born from a simple belief: true beauty feels tender, never rushed. We created a sanctuary where time slows down and every guest is met with genuine warmth and masterful care.</p>
+          
+          <p>Our therapists are artists of touch. Our rituals blend time-honored techniques with the finest natural botanicals — rose, honey, sweet almond, and rare essential oils — chosen for how they make you feel long after you leave.</p>
+        </div>
+
+        <div class="mt-9 flex items-center gap-4">
+          <a href="https://www.facebook.com/sweetspahn/" target="_blank" 
+             class="inline-flex items-center gap-2 text-sm font-semibold text-[#C48A7D] hover:text-[#A86F63] group">
+            MEET US ON FACEBOOK 
+            <span class="group-hover:translate-x-0.5 transition">→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Story image -->
+      <div class="relative">
+        <div class="aspect-[4/3] rounded-3xl overflow-hidden elegant-shadow">
+          <img src="assets/products.jpg" alt="Luxury natural spa products with honey, rose and almond at Sweet Beauty Spa" 
+               class="w-full h-full object-cover">
+        </div>
+        <div class="absolute -bottom-5 -left-5 bg-white p-6 rounded-2xl shadow-xl max-w-[260px] border border-[#F4E6E7]">
+          <p class="text-sm leading-snug">"The most beautiful part of my week. I leave feeling lighter, softer, and deeply restored."</p>
+          <p class="mt-3 text-xs font-medium text-[#C48A7D]">— Lan Anh T., regular guest since 2019</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Signature Treatments -->
+  <section id="treatments" class="bg-white py-16 border-y border-[#E8C4C7]/30">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-y-4 mb-10">
+        <div>
+          <div class="uppercase tracking-[3px] text-xs font-semibold text-[#C48A7D] mb-2">SIGNATURE RITUALS</div>
+          <h2 class="font-display section-header tracking-[-1.5px]">Timeless treatments,<br>deeply personal.</h2>
+        </div>
+        <p class="max-w-sm text-[#3F2A2A]/70">Each ritual is thoughtfully designed and customized. Prices shown are starting rates.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Service 1 -->
+        <div class="spa-card group bg-[#FDF9F4] border border-[#F4E6E7] rounded-3xl p-8 flex flex-col">
+          <div class="service-icon w-12 h-12 rounded-2xl bg-[#C48A7D]/10 flex items-center justify-center mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#C48A7D]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M14.25 9.75L16.5 12l-2.25 2.25m-4.5 0L7.5 12l2.25-2.25M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 4.01V8" />
+            </svg>
+          </div>
+          <h3 class="font-display text-2xl tracking-[-0.6px] mb-3">Rose &amp; Honey Facial</h3>
+          <p class="text-[#3F2A2A]/80 flex-1 leading-relaxed">Our signature facial uses Bulgarian rose and raw forest honey to brighten, hydrate and soften. Includes scalp massage and hand treatment.</p>
+          <div class="pt-6 mt-auto flex items-baseline justify-between text-sm">
+            <div><span class="font-semibold text-lg">60 / 90 min</span></div>
+            <div class="text-right"><span class="font-semibold">From 1,650,000</span><span class="text-xs text-[#3F2A2A]/60"> VND</span></div>
+          </div>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="spa-card group bg-[#FDF9F4] border border-[#F4E6E7] rounded-3xl p-8 flex flex-col">
+          <div class="service-icon w-12 h-12 rounded-2xl bg-[#C48A7D]/10 flex items-center justify-center mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#C48A7D]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0118 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+            </svg>
+          </div>
+          <h3 class="font-display text-2xl tracking-[-0.6px] mb-3">Sweet Almond Body Polish</h3>
+          <p class="text-[#3F2A2A]/80 flex-1 leading-relaxed">A full-body exfoliation and hydration ritual using finely ground sweet almonds, organic oils, and warm towels. Leaves skin velvety and glowing.</p>
+          <div class="pt-6 mt-auto flex items-baseline justify-between text-sm">
+            <div><span class="font-semibold text-lg">75 min</span></div>
+            <div class="text-right"><span class="font-semibold">From 1,480,000</span><span class="text-xs text-[#3F2A2A]/60"> VND</span></div>
+          </div>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="spa-card group bg-[#FDF9F4] border border-[#F4E6E7] rounded-3xl p-8 flex flex-col">
+          <div class="service-icon w-12 h-12 rounded-2xl bg-[#C48A7D]/10 flex items-center justify-center mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#C48A7D]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M19.5 12c0-1.232-.046-2.453-.138-3.662a4.006 4.006 0 00-3.7-3.7 48.678 48.678 0 00-7.324 0 4.006 4.006 0 00-3.7 3.7c-.092 1.21-.138 2.43-.138 3.662m13.5 0a48.202 48.202 0 01-.406 5.15m.406-5.15a48.116 48.116 0 00-3.077-4.15m-11.706 0a48.116 48.116 0 00-3.077 4.15m13.5 0v3.75a2.25 2.25 0 01-2.25 2.25H5.25a2.25 2.25 0 01-2.25-2.25v-3.75" />
+            </svg>
+          </div>
+          <h3 class="font-display text-2xl tracking-[-0.6px] mb-3">Harmonizing Massage</h3>
+          <p class="text-[#3F2A2A]/80 flex-1 leading-relaxed">Our most loved treatment. Long, flowing strokes with warm organic oils to release tension and restore balance. Add hot stones or aromatherapy.</p>
+          <div class="pt-6 mt-auto flex items-baseline justify-between text-sm">
+            <div><span class="font-semibold text-lg">60 / 90 min</span></div>
+            <div class="text-right"><span class="font-semibold">From 1,380,000</span><span class="text-xs text-[#3F2A2A]/60"> VND</span></div>
+          </div>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="spa-card group bg-[#FDF9F4] border border-[#F4E6E7] rounded-3xl p-8 flex flex-col">
+          <div class="service-icon w-12 h-12 rounded-2xl bg-[#C48A7D]/10 flex items-center justify-center mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#C48A7D]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+            </svg>
+          </div>
+          <h3 class="font-display text-2xl tracking-[-0.6px] mb-3">Bridal Glow Ritual</h3>
+          <p class="text-[#3F2A2A]/80 flex-1 leading-relaxed">The complete pre-wedding experience: custom facial, hand &amp; foot care, brow shaping, and a relaxing back massage. Feel radiant on your day.</p>
+          <div class="pt-6 mt-auto flex items-baseline justify-between text-sm">
+            <div><span class="font-semibold text-lg">120 min</span></div>
+            <div class="text-right"><span class="font-semibold">From 3,950,000</span><span class="text-xs text-[#3F2A2A]/60"> VND</span></div>
+          </div>
+        </div>
+
+        <!-- Service 5 -->
+        <div class="spa-card group bg-[#FDF9F4] border border-[#F4E6E7] rounded-3xl p-8 flex flex-col">
+          <div class="service-icon w-12 h-12 rounded-2xl bg-[#C48A7D]/10 flex items-center justify-center mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#C48A7D]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M15.182 15.182a4.5 4.5 0 01-6.364 0M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 4.01V8" />
+            </svg>
+          </div>
+          <h3 class="font-display text-2xl tracking-[-0.6px] mb-3">Aromatic Scalp &amp; Hair Ritual</h3>
+          <p class="text-[#3F2A2A]/80 flex-1 leading-relaxed">A deeply nourishing treatment for scalp health and hair softness using warm botanical oils and gentle massage. Perfect with any facial.</p>
+          <div class="pt-6 mt-auto flex items-baseline justify-between text-sm">
+            <div><span class="font-semibold text-lg">45 min</span></div>
+            <div class="text-right"><span class="font-semibold">From 980,000</span><span class="text-xs text-[#3F2A2A]/60"> VND</span></div>
+          </div>
+        </div>
+
+        <!-- Service 6 - Couples -->
+        <div class="spa-card group bg-[#FDF9F4] border border-[#F4E6E7] rounded-3xl p-8 flex flex-col relative overflow-hidden">
+          <div class="absolute top-6 right-6 text-[10px] px-3 py-1 rounded-full bg-[#9CA88F] text-white tracking-widest text-[10px] font-medium">MOST LOVED</div>
+          
+          <div class="service-icon w-12 h-12 rounded-2xl bg-[#C48A7D]/10 flex items-center justify-center mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#C48A7D]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
+            </svg>
+          </div>
+          <h3 class="font-display text-2xl tracking-[-0.6px] mb-3">Couples’ Sweet Escape</h3>
+          <p class="text-[#3F2A2A]/80 flex-1 leading-relaxed">Share the experience in our private couples suite. Two harmonizing massages, herbal foot soaks, and sparkling tea service in a candlelit setting.</p>
+          <div class="pt-6 mt-auto flex items-baseline justify-between text-sm">
+            <div><span class="font-semibold text-lg">90 min</span></div>
+            <div class="text-right"><span class="font-semibold">From 4,200,000</span><span class="text-xs text-[#3F2A2A]/60"> VND</span></div>
+          </div>
+        </div>
+      </div>
+
+      <p class="text-center text-xs text-[#3F2A2A]/60 mt-8">All treatments include a welcome tea ritual and post-treatment relaxation lounge time.</p>
+    </div>
+  </section>
+
+  <!-- The Sweet Difference -->
+  <section id="experience" class="max-w-7xl mx-auto px-6 py-20">
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <div class="uppercase tracking-[3px] text-xs font-semibold text-[#C48A7D] mb-3">THE SWEET DIFFERENCE</div>
+      <h2 class="font-display section-header tracking-[-1.6px]">Care that stays with you.</h2>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="bg-white rounded-3xl p-8 border border-[#F4E6E7]">
+        <div class="text-[#C48A7D] text-3xl mb-5">01</div>
+        <h4 class="font-display text-xl tracking-tight mb-3">Masterful Hands</h4>
+        <p class="text-sm leading-relaxed text-[#3F2A2A]/80">Every therapist completes our 6-month apprenticeship. Technique is beautiful. Touch is intuitive.</p>
+      </div>
+      <div class="bg-white rounded-3xl p-8 border border-[#F4E6E7]">
+        <div class="text-[#C48A7D] text-3xl mb-5">02</div>
+        <h4 class="font-display text-xl tracking-tight mb-3">Pure Ingredients</h4>
+        <p class="text-sm leading-relaxed text-[#3F2A2A]/80">We source small-batch organic oils, honeys, and botanicals from trusted farms. No silicones. No harsh synthetics.</p>
+      </div>
+      <div class="bg-white rounded-3xl p-8 border border-[#F4E6E7]">
+        <div class="text-[#C48A7D] text-3xl mb-5">03</div>
+        <h4 class="font-display text-xl tracking-tight mb-3">Time, Unrushed</h4>
+        <p class="text-sm leading-relaxed text-[#3F2A2A]/80">We never double-book rooms. Your ritual begins and ends exactly when it should. You are never hurried.</p>
+      </div>
+      <div class="bg-white rounded-3xl p-8 border border-[#F4E6E7]">
+        <div class="text-[#C48A7D] text-3xl mb-5">04</div>
+        <h4 class="font-display text-xl tracking-tight mb-3">Heartfelt Welcome</h4>
+        <p class="text-sm leading-relaxed text-[#3F2A2A]/80">From the moment you arrive until long after you leave, you are cared for like family returning home.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery" class="bg-white py-16 border-y border-[#E8C4C7]/40">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-9 gap-y-3">
+        <div>
+          <div class="text-[#C48A7D] text-xs tracking-[3px] font-semibold mb-2">IN OUR SANCTUARY</div>
+          <h2 class="font-display text-4xl tracking-[-1.3px]">Moments of quiet beauty.</h2>
+        </div>
+        <a href="https://www.facebook.com/sweetspahn/" target="_blank" class="text-sm flex items-center gap-1.5 text-[#C48A7D] hover:text-[#A86F63] font-medium">See more on Facebook →</a>
+      </div>
+
+      <!-- Masonry Gallery -->
+      <div class="masonry-grid">
+        <div class="masonry-item">
+          <img src="assets/hero.jpg" onclick="openGalleryLightbox(0)" class="gallery-img w-full rounded-2xl object-cover aspect-[16/10]" alt="Serene facial treatment at Sweet Beauty Spa">
+        </div>
+        <div class="masonry-item">
+          <img src="assets/massage-hands.jpg" onclick="openGalleryLightbox(1)" class="gallery-img w-full rounded-2xl object-cover aspect-[4/3]" alt="Therapist hands performing a relaxing massage">
+        </div>
+        <div class="masonry-item">
+          <img src="assets/couples.jpg" onclick="openGalleryLightbox(2)" class="gallery-img w-full rounded-2xl object-cover aspect-[16/9]" alt="Romantic couples massage suite at Sweet Beauty Spa">
+        </div>
+        <div class="masonry-item">
+          <img src="assets/lounge.jpg" onclick="openGalleryLightbox(3)" class="gallery-img w-full rounded-2xl object-cover aspect-[4/3]" alt="Guest relaxing in the elegant spa lounge after treatment">
+        </div>
+        <div class="masonry-item">
+          <img src="assets/products.jpg" onclick="openGalleryLightbox(4)" class="gallery-img w-full rounded-2xl object-cover aspect-[4/3]" alt="Signature natural spa products with rose, honey and almond">
+        </div>
+        <div class="masonry-item">
+          <div onclick="openGalleryLightbox(5)" class="gallery-img relative w-full aspect-[4/3] bg-[#F4E6E7] rounded-2xl overflow-hidden flex items-center justify-center cursor-pointer group">
+            <div class="text-center px-6">
+              <div class="mx-auto mb-4 w-14 h-14 rounded-full bg-white/70 flex items-center justify-center group-hover:bg-white transition">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#C48A7D]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <div class="font-medium text-sm tracking-wide">+ More beautiful moments</div>
+              <div class="text-xs mt-0.5 text-[#3F2A2A]/60">on our Facebook page</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="max-w-7xl mx-auto px-6 py-20">
+    <div class="text-center mb-11">
+      <div class="text-[#C48A7D] tracking-[3px] text-xs font-semibold">GUESTS WHO RETURN AGAIN AND AGAIN</div>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="testimonial-card bg-white p-7 rounded-3xl border border-[#F4E6E7]">
+        <div class="flex gap-0.5 text-[#C48A7D] mb-4">★★★★★</div>
+        <p class="italic leading-relaxed text-[15px]">"I’ve been to many spas. Nothing compares to the feeling of being truly seen and cared for here. The Rose &amp; Honey Facial changed my skin and my mood for days."</p>
+        <div class="mt-6 flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full bg-[#F4E6E7] flex-shrink-0"></div>
+          <div class="text-sm"><span class="font-medium">Minh Châu</span> <span class="text-[#3F2A2A]/60">— 14 visits</span></div>
+        </div>
+      </div>
+      
+      <div class="testimonial-card bg-white p-7 rounded-3xl border border-[#F4E6E7]">
+        <div class="flex gap-0.5 text-[#C48A7D] mb-4">★★★★★</div>
+        <p class="italic leading-relaxed text-[15px]">"My husband and I did the Couples Escape before our wedding. It was the most peaceful, romantic afternoon. The team made everything feel effortless and special."</p>
+        <div class="mt-6 flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full bg-[#F4E6E7] flex-shrink-0"></div>
+          <div class="text-sm"><span class="font-medium">Anh &amp; Khoa</span> <span class="text-[#3F2A2A]/60">— Newlyweds</span></div>
+        </div>
+      </div>
+
+      <div class="testimonial-card bg-white p-7 rounded-3xl border border-[#F4E6E7]">
+        <div class="flex gap-0.5 text-[#C48A7D] mb-4">★★★★★</div>
+        <p class="italic leading-relaxed text-[15px]">"I travel for work and always book here when I’m in town. It’s the only place that actually makes me slow down. The therapists are incredibly skilled and kind."</p>
+        <div class="mt-6 flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full bg-[#F4E6E7] flex-shrink-0"></div>
+          <div class="text-sm"><span class="font-medium">Thảo Nhi</span> <span class="text-[#3F2A2A]/60">— Executive</span></div>
+        </div>
+      </div>
+
+      <div class="testimonial-card bg-white p-7 rounded-3xl border border-[#F4E6E7]">
+        <div class="flex gap-0.5 text-[#C48A7D] mb-4">★★★★★</div>
+        <p class="italic leading-relaxed text-[15px]">"After months of stress, the Harmonizing Massage with hot stones felt like my body finally exhaled. I cried happy tears on the way home. Thank you."</p>
+        <div class="mt-6 flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full bg-[#F4E6E7] flex-shrink-0"></div>
+          <div class="text-sm"><span class="font-medium">Hương Giang</span> <span class="text-[#3F2A2A]/60">— First-time guest</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Visit Us / Contact -->
+  <section id="visit" class="bg-[#3F2A2A] text-[#FDF9F4] py-16">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid lg:grid-cols-12 gap-x-12 gap-y-12">
+        <!-- Left: Info -->
+        <div class="lg:col-span-5">
+          <div class="uppercase text-[#C48A7D] tracking-[2.5px] text-xs mb-3">COME AND SEE US</div>
+          <h2 class="font-display text-5xl tracking-[-1.8px] leading-none mb-8">Sweet Beauty Spa</h2>
+
+          <div class="space-y-8 text-[15px]">
+            <div>
+              <div class="font-medium text-[#C48A7D] mb-1 tracking-wide text-sm">LOCATION</div>
+              <div class="leading-snug">123 Tranquility Lane<br>Thảo Điền Ward, District 2<br>Ho Chi Minh City, Vietnam</div>
+              <!-- UPDATE: Replace with actual address from Facebook page -->
+            </div>
+
+            <div>
+              <div class="font-medium text-[#C48A7D] mb-1 tracking-wide text-sm">OPENING HOURS</div>
+              <div class="grid grid-cols-2 gap-x-4 gap-y-1 text-sm">
+                <div>Monday – Friday</div><div class="text-right">09:30 — 20:30</div>
+                <div>Saturday</div><div class="text-right">09:00 — 21:00</div>
+                <div>Sunday</div><div class="text-right">10:00 — 19:00</div>
+              </div>
+            </div>
+
+            <div>
+              <div class="font-medium text-[#C48A7D] mb-2 tracking-wide text-sm">CONNECT WITH US</div>
+              <a href="https://www.facebook.com/sweetspahn/" target="_blank" 
+                 class="inline-flex items-center gap-x-2 px-6 py-3.5 bg-white/10 hover:bg-white/15 active:bg-white/20 transition rounded-2xl text-sm font-medium">
+                <span>Message us on Facebook</span>
+                <span class="text-lg leading-none">→</span>
+              </a>
+              <p class="mt-2.5 text-xs text-white/60">Fastest way to check availability and book your preferred therapist.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Map placeholder + CTA -->
+        <div class="lg:col-span-7">
+          <div class="bg-[#FDF9F4] text-[#3F2A2A] rounded-3xl p-2 shadow-inner">
+            <div class="aspect-video bg-[#EDE4D9] rounded-[18px] relative overflow-hidden flex items-center justify-center">
+              <!-- Beautiful placeholder map -->
+              <div class="absolute inset-0 bg-[radial-gradient(#C48A7D_0.6px,transparent_1px)] bg-[length:5px_5px] opacity-30"></div>
+              <div class="relative text-center px-6">
+                <div class="mx-auto mb-4 w-16 h-16 rounded-2xl bg-white flex items-center justify-center shadow">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-[#C48A7D]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314-11.314 8 8 0 01-1.414 11.314z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                </div>
+                <div class="font-display text-2xl tracking-tight">Thảo Điền • Saigon</div>
+                <div class="text-sm mt-1 text-[#3F2A2A]/60">A hidden sanctuary just minutes from the river</div>
+                
+                <a href="https://www.facebook.com/sweetspahn/" target="_blank"
+                   class="mt-6 inline-block text-xs tracking-widest font-medium border-b border-[#C48A7D]/40 hover:border-[#C48A7D] pb-px">GET DIRECTIONS ON FACEBOOK →</a>
+              </div>
+            </div>
+          </div>
+          <p class="text-center text-xs text-white/50 mt-4 tracking-wide">Free private parking available for guests</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="max-w-4xl mx-auto px-6 py-20 text-center">
+    <h2 class="font-display text-5xl tracking-[-1.6px] leading-tight mb-5">Ready to feel like yourself again?</h2>
+    <p class="text-xl text-[#3F2A2A]/70 mb-9 max-w-md mx-auto">Your ritual is waiting. Let us take care of you.</p>
+    
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <button onclick="openBookingModal()" 
+              class="luxury-btn px-14 py-4 bg-[#C48A7D] hover:bg-[#A86F63] active:bg-[#8E594E] transition text-white font-semibold rounded-full text-base shadow-lg">
+        Book Your Treatment
+      </button>
+      <a href="https://www.facebook.com/sweetspahn/" target="_blank" 
+         class="px-10 py-4 border border-[#C48A7D] text-[#C48A7D] hover:bg-[#C48A7D] hover:text-white font-medium rounded-full transition text-base flex items-center justify-center">
+        Message us on Facebook
+      </a>
+    </div>
+    <p class="text-xs text-[#3F2A2A]/50 mt-6">We usually reply within a few hours on Facebook Messenger.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-[#E8C4C7]/50 py-9 text-xs">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row gap-y-3 md:items-center justify-between text-[#3F2A2A]/60">
+      <div>© Sweet Beauty Spa. All rituals reserved with care.</div>
+      <div class="flex gap-x-6">
+        <a href="https://www.facebook.com/sweetspahn/" target="_blank" class="hover:text-[#3F2A2A]">Facebook</a>
+        <span class="text-[#E8C4C7]">•</span>
+        <span>Designed with love for beautiful souls</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Booking Modal -->
+  <div id="booking-modal" onclick="if (event.target.id === 'booking-modal') closeBookingModal()" class="hidden fixed inset-0 z-[70] bg-black/60 flex items-center justify-center p-4">
+    <div onclick="event.stopImmediatePropagation()" class="modal bg-white w-full max-w-lg rounded-3xl overflow-hidden shadow-2xl">
+      <div class="px-8 pt-8 pb-6">
+        <div class="flex justify-between items-start">
+          <div>
+            <div class="text-[#C48A7D] text-sm tracking-widest font-semibold">LET'S BEGIN</div>
+            <h3 class="font-display text-3xl tracking-tight">Book your ritual</h3>
+          </div>
+          <button onclick="closeBookingModal()" class="text-3xl leading-none text-[#3F2A2A]/40 hover:text-[#3F2A2A] -mr-1">×</button>
+        </div>
+
+        <form id="booking-form" onsubmit="handleBookingSubmit(event)" class="mt-6 space-y-5">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-medium tracking-wider text-[#3F2A2A]/70 mb-1.5">FULL NAME</label>
+              <input type="text" required class="w-full border border-[#E8C4C7] focus:border-[#C48A7D] rounded-2xl px-4 py-3 text-sm outline-none" placeholder="Nguyễn Lan Anh">
+            </div>
+            <div>
+              <label class="block text-xs font-medium tracking-wider text-[#3F2A2A]/70 mb-1.5">PHONE / ZALO</label>
+              <input type="tel" required class="w-full border border-[#E8C4C7] focus:border-[#C48A7D] rounded-2xl px-4 py-3 text-sm outline-none" placeholder="0912 345 678">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-medium tracking-wider text-[#3F2A2A]/70 mb-1.5">PREFERRED TREATMENT</label>
+            <select required class="w-full border border-[#E8C4C7] focus:border-[#C48A7D] rounded-2xl px-4 py-3 text-sm outline-none bg-white">
+              <option value="">Select a ritual...</option>
+              <option>Rose &amp; Honey Facial</option>
+              <option>Sweet Almond Body Polish</option>
+              <option>Harmonizing Massage (with hot stones)</option>
+              <option>Bridal Glow Ritual</option>
+              <option>Aromatic Scalp &amp; Hair Ritual</option>
+              <option>Couples’ Sweet Escape</option>
+              <option>Custom combination / surprise me</option>
+            </select>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-medium tracking-wider text-[#3F2A2A]/70 mb-1.5">PREFERRED DATE</label>
+              <input type="date" required class="w-full border border-[#E8C4C7] focus:border-[#C48A7D] rounded-2xl px-4 py-3 text-sm outline-none">
+            </div>
+            <div>
+              <label class="block text-xs font-medium tracking-wider text-[#3F2A2A]/70 mb-1.5">TIME OF DAY</label>
+              <select required class="w-full border border-[#E8C4C7] focus:border-[#C48A7D] rounded-2xl px-4 py-3 text-sm outline-none bg-white">
+                <option>Morning (09:30–12:00)</option>
+                <option>Afternoon (13:00–17:00)</option>
+                <option>Evening (17:30–20:30)</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-medium tracking-wider text-[#3F2A2A]/70 mb-1.5">NOTES FOR OUR TEAM (optional)</label>
+            <textarea rows="3" class="w-full border border-[#E8C4C7] focus:border-[#C48A7D] rounded-3xl px-4 py-3 text-sm outline-none resize-y" placeholder="First time, prefer female therapist, sensitive skin, celebrating a birthday..."></textarea>
+          </div>
+
+          <button type="submit" 
+                  class="luxury-btn w-full py-4 mt-2 rounded-2xl bg-[#C48A7D] hover:bg-[#A86F63] active:bg-[#8E594E] text-white font-semibold tracking-wide text-sm">
+            REQUEST APPOINTMENT
+          </button>
+        </form>
+
+        <p class="text-center text-[11px] text-[#3F2A2A]/50 mt-5">We’ll confirm within a few hours via Facebook Messenger or phone.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Gallery Lightbox -->
+  <div id="lightbox" onclick="closeLightbox()" class="hidden fixed inset-0 z-[80] bg-black/90 flex items-center justify-center p-4">
+    <div onclick="event.stopImmediatePropagation()" class="relative max-w-5xl w-full">
+      <button onclick="closeLightbox()" class="absolute -top-3 -right-3 text-white/70 hover:text-white z-10 text-4xl leading-none">×</button>
+      
+      <img id="lightbox-image" class="w-full max-h-[82vh] object-contain rounded-2xl shadow-2xl" alt="Sweet Beauty Spa gallery image">
+      
+      <div class="flex items-center justify-between mt-4 px-1 text-white/70 text-sm">
+        <button onclick="prevLightboxImage(event)" class="flex items-center gap-2 hover:text-white px-4 py-2">
+          <span>←</span> <span class="hidden sm:inline">Previous</span>
+        </button>
+        <div id="lightbox-counter" class="font-mono text-xs tracking-widest"></div>
+        <button onclick="nextLightboxImage(event)" class="flex items-center gap-2 hover:text-white px-4 py-2">
+          <span class="hidden sm:inline">Next</span> <span>→</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Tailwind script config
+    function initializeTailwind() {
+      // Already using play CDN with custom styles
+    }
+
+    // Navbar scroll effect
+    function initNavbar() {
+      const nav = document.getElementById('nav');
+      let lastScroll = 0;
+
+      window.addEventListener('scroll', () => {
+        const currentScroll = window.scrollY;
+        
+        if (currentScroll > 80) {
+          nav.classList.add('nav-scrolled');
+        } else {
+          nav.classList.remove('nav-scrolled');
+        }
+        
+        lastScroll = currentScroll;
+      });
+    }
+
+    // Mobile menu
+    function initMobileMenu() {
+      const btn = document.getElementById('mobile-menu-btn');
+      const menu = document.getElementById('mobile-menu');
+
+      btn.addEventListener('click', () => {
+        if (menu.classList.contains('hidden')) {
+          menu.classList.remove('hidden');
+          btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.25" d="M6 18L18 6M6 6l12 12" /></svg>`;
+        } else {
+          closeMobileMenu();
+        }
+      });
+
+      // Close when clicking links
+      document.querySelectorAll('.mobile-nav-link').forEach(link => {
+        link.addEventListener('click', closeMobileMenu);
+      });
+    }
+
+    function closeMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      const btn = document.getElementById('mobile-menu-btn');
+      menu.classList.add('hidden');
+      btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M4 6h16M4 12h16M4 18h16" /></svg>`;
+    }
+
+    // Booking modal
+    let bookingModal = null;
+
+    function openBookingModal() {
+      bookingModal = document.getElementById('booking-modal');
+      bookingModal.classList.remove('hidden');
+      bookingModal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeBookingModal() {
+      if (!bookingModal) return;
+      bookingModal.classList.remove('flex');
+      bookingModal.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    function handleBookingSubmit(e) {
+      e.preventDefault();
+      
+      const form = e.target;
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalText = submitBtn.textContent;
+      
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'SENDING YOUR REQUEST...';
+
+      // Simulate sending + nice UX
+      setTimeout(() => {
+        form.innerHTML = `
+          <div class="py-9 text-center">
+            <div class="mx-auto mb-4 w-16 h-16 rounded-full bg-[#C48A7D]/10 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-[#C48A7D]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v18" />
+              </svg>
+            </div>
+            <h4 class="font-display text-2xl tracking-tight mb-2">Thank you, beautiful soul.</h4>
+            <p class="text-[#3F2A2A]/80 mb-7 max-w-[30ch] mx-auto">Your request has been received. We will contact you within a few hours via Messenger or phone to confirm your appointment.</p>
+            
+            <a href="https://www.facebook.com/sweetspahn/" target="_blank"
+               class="inline-flex items-center justify-center px-8 py-3 rounded-2xl bg-[#3F2A2A] text-white text-sm font-medium hover:bg-black">
+              Message us directly on Facebook
+            </a>
+          </div>
+        `;
+        
+        setTimeout(() => {
+          // Auto close after showing success for a bit
+          if (bookingModal && !bookingModal.classList.contains('hidden')) {
+            closeBookingModal();
+            // Reset form for next time
+            location.reload(); // simplest way to reset modal state
+          }
+        }, 5200);
+      }, 1350);
+    }
+
+    // Gallery Lightbox
+    const galleryImages = [
+      'assets/hero.jpg',
+      'assets/massage-hands.jpg',
+      'assets/couples.jpg',
+      'assets/lounge.jpg',
+      'assets/products.jpg',
+      'assets/hero.jpg' // placeholder for "more" – points back to hero in this demo
+    ];
+    
+    let currentLightboxIndex = 0;
+
+    function openGalleryLightbox(index) {
+      currentLightboxIndex = index;
+      const lightbox = document.getElementById('lightbox');
+      const img = document.getElementById('lightbox-image');
+      const counter = document.getElementById('lightbox-counter');
+      
+      img.src = galleryImages[index];
+      counter.textContent = `${index + 1} / ${galleryImages.length}`;
+      
+      lightbox.classList.remove('hidden');
+      lightbox.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      const lightbox = document.getElementById('lightbox');
+      lightbox.classList.remove('flex');
+      lightbox.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    function prevLightboxImage(e) {
+      e.stopImmediatePropagation();
+      currentLightboxIndex = (currentLightboxIndex - 1 + galleryImages.length) % galleryImages.length;
+      updateLightboxImage();
+    }
+
+    function nextLightboxImage(e) {
+      e.stopImmediatePropagation();
+      currentLightboxIndex = (currentLightboxIndex + 1) % galleryImages.length;
+      updateLightboxImage();
+    }
+
+    function updateLightboxImage() {
+      const img = document.getElementById('lightbox-image');
+      const counter = document.getElementById('lightbox-counter');
+      
+      img.style.opacity = '0';
+      setTimeout(() => {
+        img.src = galleryImages[currentLightboxIndex];
+        counter.textContent = `${currentLightboxIndex + 1} / ${galleryImages.length}`;
+        img.style.opacity = '1';
+      }, 120);
+    }
+
+    // Keyboard support for lightbox
+    function initKeyboardControls() {
+      document.addEventListener('keydown', (e) => {
+        const lightbox = document.getElementById('lightbox');
+        if (lightbox.classList.contains('hidden')) return;
+
+        if (e.key === 'Escape') {
+          closeLightbox();
+        } else if (e.key === 'ArrowLeft') {
+          currentLightboxIndex = (currentLightboxIndex - 1 + galleryImages.length) % galleryImages.length;
+          updateLightboxImage();
+        } else if (e.key === 'ArrowRight') {
+          currentLightboxIndex = (currentLightboxIndex + 1) % galleryImages.length;
+          updateLightboxImage();
+        }
+      });
+
+      // Also allow closing booking modal with escape
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          const booking = document.getElementById('booking-modal');
+          if (!booking.classList.contains('hidden')) {
+            closeBookingModal();
+          }
+        }
+      });
+    }
+
+    // Smooth scroll for all anchor links
+    function initSmoothScroll() {
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const targetId = this.getAttribute('href').substring(1);
+          const target = document.getElementById(targetId);
+          if (target) {
+            e.preventDefault();
+            const navHeight = 80;
+            const elementPosition = target.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.scrollY - navHeight;
+
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    }
+
+    // Initialize everything
+    function initializeWebsite() {
+      initializeTailwind();
+      initNavbar();
+      initMobileMenu();
+      initKeyboardControls();
+      initSmoothScroll();
+
+      // Easter egg: clicking logo scrolls to top smoothly
+      const logo = document.querySelector('nav .flex.items-center');
+      if (logo) {
+        logo.style.cursor = 'pointer';
+        logo.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+
+      // Make sure modals start hidden properly
+      const booking = document.getElementById('booking-modal');
+      if (booking) booking.classList.add('hidden');
+
+      // Optional: pre-load lightbox images for snappier gallery
+      galleryImages.forEach(src => {
+        const i = new Image();
+        i.src = src;
+      });
+
+      console.log('%c[Sweet Beauty Spa] Beautiful landing page initialized. All placeholder content ready for your real details.', 'color:#C48A7D');
+    }
+
+    // Boot
+    window.addEventListener('DOMContentLoaded', initializeWebsite);
+  </script>
+</body>
+</html>
