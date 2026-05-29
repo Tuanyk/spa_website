@@ -246,8 +246,11 @@
   <!-- Hero Section -->
   <header class="relative pt-20 min-h-[100dvh] flex items-center justify-center overflow-hidden">
     <div class="absolute inset-0 z-0">
-      <img src="temp/herobanner.png" alt="Liệu trình triệt lông chuyên nghiệp tại Sweet Beauty Spa" 
-           class="w-full h-full object-cover object-center">
+      <picture>
+        <source media="(max-width: 767px)" srcset="temp/herobannermb.png">
+        <img src="temp/herobanner.png" alt="Liệu trình triệt lông chuyên nghiệp tại Sweet Beauty Spa" 
+             class="w-full h-full object-cover object-center">
+      </picture>
       <div class="absolute inset-0 bg-gradient-to-b from-black/[0.38] via-black/[0.28] to-black/[0.42]"></div>
       <div class="absolute inset-0 bg-gradient-to-r from-black/[0.18] via-transparent to-black/[0.10]"></div>
     </div>
