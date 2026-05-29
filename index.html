@@ -7,7 +7,7 @@
   <meta name="description" content="Sweet Beauty Spa – Chăm sóc sắc đẹp &amp; thư giãn toàn diện. Chuyên da, gội đầu dưỡng sinh, massage body, triệt lông công nghệ cao. Cam kết an toàn – hiệu quả – tận tâm tại Hà Nội.">
   <meta property="og:title" content="Sweet Beauty Spa • Chăm sóc sắc đẹp &amp; Thư giãn toàn diện">
   <meta property="og:description" content="Chuyên da, gội đầu dưỡng sinh, massage body. Cam kết an toàn – hiệu quả – tận tâm. Giúp bạn rạng rỡ và tự tin mỗi ngày.">
-  <meta property="og:image" content="assets/hero.jpg">
+  <meta property="og:image" content="temp/herobanner.png">
   <meta property="og:type" content="website">
 
   <!-- Elegant fonts -->
@@ -186,14 +186,8 @@
     <div class="max-w-7xl mx-auto px-6">
       <div class="flex items-center justify-between h-20">
         <!-- Logo -->
-        <div class="flex items-center gap-x-3">
-          <div class="w-9 h-9 rounded-full bg-gradient-to-br from-[#C48A7D] to-[#9CA88F] flex items-center justify-center">
-            <span class="text-white text-xl font-display tracking-tight">S</span>
-          </div>
-          <div>
-            <div class="font-display text-2xl tracking-[-1.5px] leading-none">Sweet Beauty</div>
-            <div class="text-[10px] text-[#C48A7D] tracking-[2px] -mt-0.5 font-medium">SPA</div>
-          </div>
+        <div class="flex items-center cursor-pointer" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
+          <img src="temp/logo.png" alt="Sweet Beauty Spa Logo" class="h-12 w-auto object-contain bg-white/60 rounded-2xl px-3 py-1.5">
         </div>
 
         <!-- Desktop Navigation -->
@@ -252,10 +246,10 @@
   <!-- Hero Section -->
   <header class="relative pt-20 min-h-[100dvh] flex items-center justify-center overflow-hidden">
     <div class="absolute inset-0 z-0">
-      <img src="assets/hero.jpg" alt="Serene woman receiving a luxurious facial treatment at Sweet Beauty Spa" 
+      <img src="temp/herobanner.png" alt="Liệu trình triệt lông chuyên nghiệp tại Sweet Beauty Spa" 
            class="w-full h-full object-cover object-center">
-      <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/35 to-black/50"></div>
-      <div class="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/10"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-black/55 via-black/45 to-black/60"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-black/25 via-transparent to-black/15"></div>
     </div>
 
     <div class="relative z-10 max-w-5xl mx-auto px-6 text-center pt-8">
@@ -545,7 +539,7 @@
       <!-- Masonry Gallery -->
       <div class="masonry-grid">
         <div class="masonry-item">
-          <img src="assets/hero.jpg" onclick="openGalleryLightbox(0)" class="gallery-img w-full rounded-2xl object-cover aspect-[16/10]" alt="Liệu trình chăm sóc da thư giãn tại Sweet Beauty Spa">
+          <img src="temp/herobanner.png" onclick="openGalleryLightbox(0)" class="gallery-img w-full rounded-2xl object-cover aspect-[16/10]" alt="Liệu trình triệt lông chuyên nghiệp với máy Candela tại Sweet Beauty Spa">
         </div>
         <div class="masonry-item">
           <img src="assets/massage-hands.jpg" onclick="openGalleryLightbox(1)" class="gallery-img w-full rounded-2xl object-cover aspect-[4/3]" alt="Bàn tay kỹ thuật viên thực hiện massage body">
@@ -628,6 +622,7 @@
         <!-- Left: Info -->
         <div class="lg:col-span-5">
           <div class="uppercase text-[#C48A7D] tracking-[2.5px] text-xs mb-3">HÃY ĐẾN VÀ GẶP CHÚNG TÔI</div>
+          <img src="temp/logo.png" alt="Sweet Beauty Spa" class="h-14 w-auto mb-6 object-contain brightness-0 invert-[0.85]">
           <h2 class="font-display text-5xl tracking-[-1.8px] leading-none mb-8">Sweet Beauty Spa</h2>
 
           <div class="space-y-8 text-[15px]">
@@ -913,7 +908,7 @@
 
     // Gallery Lightbox
     const galleryImages = [
-      'assets/hero.jpg',
+      'temp/herobanner.png', // new professional treatment hero
       'assets/massage-hands.jpg',
       'assets/couples.jpg',
       'assets/lounge.jpg',
@@ -1025,8 +1020,8 @@
       initKeyboardControls();
       initSmoothScroll();
 
-      // Easter egg: clicking logo scrolls to top smoothly
-      const logo = document.querySelector('nav .flex.items-center');
+      // Clicking logo scrolls to top smoothly
+      const logo = document.querySelector('nav img[alt="Sweet Beauty Spa Logo"]');
       if (logo) {
         logo.style.cursor = 'pointer';
         logo.addEventListener('click', () => {
